@@ -41,7 +41,50 @@ class ModelTrainer:
                 "AdaBoost Classifier": AdaBoostClassifier()
             }
 
-            model_report:dict = evaluate_model(X=X_train, y=y_train, X_test=X_test, y_test=y_test, models=models)
+            params = {
+                "Logistic Regression":{
+                    'C': [0.001, 0.01, 0.1, 1, 10],
+                    'penalty': ['l1', 'l2'],
+                    'solver': ['liblinear', 'lbfgs']
+                },
+
+                "K-Neighbors Classifier":{
+                    'n_neighbors': [3, 5, 7],  # Adjust the number of neighbors
+                    'weights': ['uniform', 'distance'],
+                },
+
+                'Decision Tree Classifier': {
+                    'criterion': ['gini', 'entropy'],  # Splitting criterion
+                    'max_depth': [None, 10, 20, 30],  # Maximum depth of the tree
+                },
+
+                'Gradient Boosting': {
+                    'n_estimators': [50, 100, 200],  # Number of boosting stages
+                    'learning_rate': [0.01, 0.1, 0.2],  # Step size shrinkage
+                    'max_depth': [3, 4, 5],  # Maximum depth of individual trees
+                },
+
+                'CatBoosting Classifier': {
+                    'iterations': [100, 200, 300],  # Number of boosting iterations
+                    'learning_rate': [0.01, 0.1, 0.2],  # Step size shrinkage
+                    'depth': [4, 6, 8],  # Depth of the trees
+                },
+
+                'AdaBoost Classifier': {
+                    'n_estimators': [50, 100, 200],  # Number of boosting stages
+                    'learning_rate': [0.01, 0.1, 0.2],  # Step size shrinkage
+                },
+
+                "Random Forest Classifier":{
+                    'max_depth': [3, 5, 7],
+                    'min_samples_split': [2, 5, 10],
+                    'n_estimators': [50, 100, 200]
+                }
+
+
+            }
+
+            model_report:dict = evaluate_model(X=X_train, y=y_train, X_test=X_test, y_test=y_test, models=models, params=params)
 
             best_model_score = max(sorted(model_report.values()))
 
