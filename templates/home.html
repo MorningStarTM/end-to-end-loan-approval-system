@@ -4,14 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Approval System</title>
+    <style>
+/* Body styling */
+body {
+    background: linear-gradient(to bottom right, #7f00ff, #e100ff, #ff007f);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Container styling */
+.login {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h1 {
+    color: #ffcc00;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #3498db;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Form styling */
+.form-label {
+    color: #fff;
+    text-align: left;
+    display: block;
+}
+
+.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Select dropdown styling */
+select {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #3498db;
+    color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Button styling */
+.btn {
+    background: #3498db;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background: #2980b9;
+}
+
+/* Additional styling */
+legend {
+    color: #ffcc00;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .login {
+        width: 80%;
+    }
+}
+
+
+    </style>
 </head>
 <body>
     <div class="login">
         <h1>Loan Approval System</h1>
         <form action="{{ url_for('predict_datapoint')}}" method="post">
-            <h1>
-                <legend>Loan Approval System</legend>
-            </h1>
             <div class="mb-3">
                 <label class="form-label">Loan ID</label>
                 <input class="form-control" type="number" name="loan_id"
@@ -90,7 +199,7 @@
             </div>
         </form>
         <h2>
-            The  prediction is {{results}}
+            The  Applicant is {{results}}
          </h2>
     </div>
     

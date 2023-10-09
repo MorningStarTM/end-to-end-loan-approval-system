@@ -4,6 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Approval System</title>
+    <style>
+/* Body styling */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 72px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin: 0;
+    text-shadow: 2px 2px 4px #3498db;
+}
+
+/* Add an animated glow to the text */
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 4px #3498db;
+    }
+    50% {
+        text-shadow: 4px 4px 6px #e74c3c;
+    }
+    100% {
+        text-shadow: 2px 2px 4px #3498db;
+    }
+}
+
+h1:hover {
+    animation: glow 1s infinite;
+}
+
+
+    </style>
 </head>
 <body>
     <h1>Welcome</h1>
