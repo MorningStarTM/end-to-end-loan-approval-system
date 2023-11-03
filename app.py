@@ -19,7 +19,6 @@ def predict_datapoint():
         return render_template('home.html')
     else:
         data = CustomData(
-            loan_id = request.form.get("loan_id"),
             no_of_dependents = int(request.form.get("no_of_dependents")),
             self_employed = " "+request.form.get("self_employed"),
             education = " "+request.form.get("education"),

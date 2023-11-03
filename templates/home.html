@@ -121,11 +121,7 @@ legend {
     <div class="login">
         <h1>Loan Approval System</h1>
         <form action="{{ url_for('predict_datapoint')}}" method="post">
-            <div class="mb-3">
-                <label class="form-label">Loan ID</label>
-                <input class="form-control" type="number" name="loan_id"
-                    placeholder="Enter your loan ID"/>
-            </div>
+            
             <div class="mb-3">
                 <label class="form-label">no of dependents</label>
                 <input class="form-control" type="number" name="no_of_dependents"

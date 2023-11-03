@@ -23,7 +23,7 @@ class PredictPipeline:
 # loan_amount	loan_term	cibil_score	residential_assets_value	commercial_assets_value	luxury_assets_value	bank_asset_value
 class CustomData:
     def __init__(self,
-                 loan_id:int,
+                 #loan_id:int,
                  no_of_dependents:int,
                  self_employed:str,
                  education:str,
@@ -35,7 +35,7 @@ class CustomData:
                  commercial_assets_value:int,
                  luxury_assets_value:int,
                  bank_asset_value:int):
-        self.loan_id = loan_id
+        #self.loan_id = loan_id
         self.no_of_dependent = no_of_dependents
         self.education = education
         self.self_employed = self_employed
@@ -51,7 +51,7 @@ class CustomData:
     def get_data_as_dataframe(self):
         try:
             custom_data_input_dict = {
-                " loan_id":[self.loan_id],
+                #" loan_id":[self.loan_id],
                 " no_of_dependents":[self.no_of_dependent],
                 " education":[self.education],
                 " self_employed":[self.self_employed],
